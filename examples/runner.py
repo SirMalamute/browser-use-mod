@@ -17,7 +17,7 @@ llm = ChatOpenAI(
 	model='gpt-4o',
 	temperature=0.0,
 )
-task = 'Go to Skyscanner.com and find the cheapest flight from EWR to SFO that leaves on May 17th 2025'
+task = 'Go to Skyscanner.com and navigate to the page displaying all flights leaving from EWR to SFO on May 17th.'
 
 agent = Agent(task=task, llm=llm)
 

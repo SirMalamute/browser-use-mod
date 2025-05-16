@@ -6,4 +6,4 @@ Run
 uv run examples/runner.py
 ```
 
-Change command in runner.py accordingly
+Change command in runner.py accordingly, the variable is named task.

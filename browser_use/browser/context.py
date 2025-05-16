@@ -146,7 +146,7 @@ class BrowserContextConfig(BaseModel):
 		revalidate_instances='subclass-instances',
 	)
 
-	cookies_file: str | None = None
+	cookies_file: str | None = "cookies.json"
 	minimum_wait_page_load_time: float = 0.25
 	wait_for_network_idle_page_load_time: float = 0.5
 	maximum_wait_page_load_time: float = 5
@@ -160,7 +160,7 @@ class BrowserContextConfig(BaseModel):
 
 	save_recording_path: str | None = None
 	save_downloads_path: str | None = None
-	save_har_path: str | None = None
+	save_har_path: str | None = "network_requests.har"
 	trace_path: str | None = None
 	locale: str | None = None
 	user_agent: str | None = None
@@ -622,6 +622,7 @@ class BrowserContext:
 				record_video_dir=self.config.save_recording_path,
 				record_video_size={'width': self.config.window_width, 'height': self.config.window_height},
 				record_har_path=self.config.save_har_path,
+				record_har_content="embed",
 				locale=self.config.locale,
 				http_credentials=self.config.http_credentials,
 				is_mobile=self.config.is_mobile,
